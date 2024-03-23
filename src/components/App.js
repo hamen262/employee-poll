@@ -2,22 +2,18 @@
 import '../assests/App.css';
 import React, { Fragment } from 'react';
 import { Route } from 'react-router-dom';
-import Nav from './Nav'; // Import the 'Nav' component
-import LoadingBar from './LoadingBar'; // Import the 'LoadingBar' component
 import { Routes } from 'react-router-dom';
+import Login from './Login'; // Import the 'Login' component
+import LoadingBar from 'react-top-loading-bar';
 
-const App = () =>{
+const App = () => {
   return (
     <Fragment>
       <LoadingBar />
-      <div className="container">
-        <Nav />
-     
-          <Routes>
-         
-            <Route  />
-          </Routes>
-     
+      <div className="container">      
+        <Routes>
+          <Route path="/" exact element={<Login />}/>
+        </Routes>
       </div>
     </Fragment>
   );

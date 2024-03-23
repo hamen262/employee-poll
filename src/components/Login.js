@@ -1,18 +1,20 @@
 import React from 'react';
 import { Form, Input, Button } from 'antd';
 
-const Login = () => {
+const Login = (props) => {
     const onFinish = (values) => {
         console.log('Received values:', values);
         // Add your login logic here
     };
 
     return (
-        <div>
+        <div  style={{ marginLeft: '50px', textAlign: 'center' }}>
             <h1>Login</h1>
-            <Form onFinish={onFinish}>
+            <Form onFinish={onFinish}
+            layout='vertical'
+           >
                 <Form.Item
-                    label="Username"
+                    label="User"
                     name="username"
                     rules={[{ required: true, message: 'Please input your username!' }]}
                 >
@@ -29,7 +31,7 @@ const Login = () => {
 
                 <Form.Item>
                     <Button type="primary" htmlType="submit">
-                        Log in
+                        Submit
                     </Button>
                 </Form.Item>
             </Form>
